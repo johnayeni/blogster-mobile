@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "slug": "Blogster",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "privacy": "public",
+    "platforms": ["ios", "android"],
+    "icon": "./app/assets/img/icon.png",
+    "splash": {
+      "image": "./app/assets/img/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./app/assets/img/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./app/assets/img/favicon.png"
+    }
+  }
+}
