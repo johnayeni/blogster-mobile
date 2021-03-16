@@ -10,7 +10,7 @@ import {
   Text,
   Textarea
 } from 'native-base';
-import { StyleSheet, Platform, SafeAreaView } from 'react-native';
+import { StyleSheet, Platform, SafeAreaView, Keyboard } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scrollview';
 
@@ -43,6 +43,7 @@ const CreatePostScreen: React.FC = () => {
             <Text style={styles.errorText}>{form.errors.title}</Text>
           )}
           <Textarea
+            returnKeyType="done"
             style={styles.textArea}
             rowSpan={10}
             bordered
@@ -56,16 +57,10 @@ const CreatePostScreen: React.FC = () => {
             <Text style={styles.errorText}>{form.errors.body}</Text>
           )}
         </Form>
+        <Button block large dark onPress={form.handleSubmit}>
+          <Text>Create Post</Text>
+        </Button>
       </KeyboardAwareScrollView>
-      <Button
-        block
-        large
-        dark
-        style={styles.bottomButton}
-        onPress={form.handleSubmit}
-      >
-        <Text>Create Post</Text>
-      </Button>
     </Container>
   );
 };
@@ -86,14 +81,6 @@ const styles = StyleSheet.create({
   textArea: {
     marginHorizontal: 10,
     marginTop: 20
-  },
-  bottomButton: {
-    borderRadius: 0,
-    ...Platform.select({
-      ios: {
-        height: 80
-      }
-    })
   }
 });
 
